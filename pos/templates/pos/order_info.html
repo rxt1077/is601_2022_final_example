@@ -1,0 +1,16 @@
+{% extends 'example_app/base.html' %}
+
+{% block title %}Order Info{% endblock %}
+
+{% block content %}
+<p>ID: {{ order.id }}</p>
+<p>Instructions: {{ order.instructions }}</p>
+<p>Total Cost: ${{ order.total_cost }}</p>
+
+<ul>
+{% for item in order.baked_goods.all %}
+<li>{{ item.name }}</li>
+{% endfor %}
+</ul>
+
+{% endblock %}
